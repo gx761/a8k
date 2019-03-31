@@ -2,6 +2,9 @@ import path from 'path';
 import { ENV_DEV, TYPE_SERVER } from '../../const';
 
 module.exports = (config, context, { type }) => {
+  const threadLoader = require('thread-loader');
+  threadLoader.warmup({}, ['babel-loader', 'babel-preset-a8k']);
+
   let include = [];
   if (context.config.babel) {
     include = context.config.babel.include || [];
@@ -36,6 +39,10 @@ module.exports = (config, context, { type }) => {
     .end()
     // 忽略哪些压缩的文件
     .exclude.add(/(.|_)min\.js$/)
+    .end()
+    .use('thread-loader')
+    .loader('thread-loader')
+    .options({})
     .end()
     .use('babel-loader')
     .loader('babel-loader')

@@ -98,6 +98,7 @@
     "style-loader": "^0.23.1",
     "svg-inline-loader": "^0.8.0",
     "terser-webpack-plugin": "^1.2.1",
+    "thread-loader": "^2.1.2",
     "url": "^0.11.0",
     "webpack": "4.28.4",
     "webpack-bundle-analyzer": "^3.0.3",
