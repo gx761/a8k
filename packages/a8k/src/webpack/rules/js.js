@@ -2,9 +2,6 @@ import path from 'path';
 import { ENV_DEV, TYPE_SERVER } from '../../const';
 
 module.exports = (config, context, { type }) => {
-  const threadLoader = require('thread-loader');
-  threadLoader.warmup({}, ['babel-loader', 'babel-preset-a8k']);
-
   let include = [];
   if (context.config.babel) {
     include = context.config.babel.include || [];
